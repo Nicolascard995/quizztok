@@ -1,10 +1,10 @@
 import Link from "next/link"
-import Image from "next/image"
 import { ChevronRight, Video, Users, Utensils } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import PlaceholderImage from "@/components/placeholder-image"
 
 interface QuizCardProps {
   title: string
@@ -42,11 +42,12 @@ export default function QuizCard({
     <Card className="overflow-hidden transition-all hover:shadow-lg bg-zinc-900 border-zinc-800 hover:border-pink-500/50">
       <div className="relative aspect-video overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/20 z-10" />
-        <Image
-          src={image || "/placeholder.svg"}
+        {/* Reemplazar Image con PlaceholderImage */}
+        <PlaceholderImage
+          width={350}
+          height={250}
           alt={title}
-          fill
-          className="object-cover transition-transform hover:scale-105"
+          className="object-cover transition-transform hover:scale-105 w-full h-full"
         />
         <Badge className={`absolute top-2 right-2 z-20 bg-gradient-to-r ${gradient} border-0 flex gap-1 items-center`}>
           {renderIcon()}
